@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp Tiền - TikTok Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background: #ffffff;
+            padding: 1.2rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .payment-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .payment-method {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .method-card {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            border-color: #fe2c55;
+            transform: translateY(-5px);
+        }
+
+        .method-card.active {
+            border-color: #fe2c55;
+            background: #fff5f6;
+        }
+
+        .method-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fe2c55;
+        }
+
+        .amount-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .submit-button {
+            background: linear-gradient(45deg, #fe2c55, #69c9d0);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.3);
+        }
+
+        .payment-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .payment-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .payment-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+                .qr-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .qr-content {
+    background-color: white;
+    margin: 1% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    max-height: 90%;
+    text-align: center;
+        }
+
+        .close-qr {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .close-qr:hover {
+            color: #fe2c55;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .bank-info {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .bank-info p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .copy-button {
+            background: #fe2c55;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .copy-button:hover {
+            background: #e6234c;
+        }
+
+        .account-info {
+    display: flex
+;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* margin: 10px 0; */
+    /* padding: 10px; */
+    background: #fff;
+    border-radius: 5px;
+        }
+
+    </style>
+
+
+  <style>      
+
+      @keyframes fadeOutHighlight {
+        from {background-color: rgba(155,215,255,0.5);}
+        to {background-color: rgba(155,215,255,0);}
+      }      
+      @keyframes fadeOutHighlightIMG {
+        0% {filter: sepia(100%) hue-rotate(180deg) saturate(200%);}
+        33% {filter: sepia(66%) hue-rotate(180deg) saturate(100%);}
+        50% {filter: sepia(50%) hue-rotate(90deg) saturate(50%);}
+        66% {filter: sepia(33%) hue-rotate(0deg) saturate(100%);}
+        100% {filter: sepia(0%) hue-rotate(0deg) saturate(100%);}
+      }
+      @keyframes fiveserverInfoPopup {
+        0%   {top:-40px;}
+        15%  {top:4px;}
+        85%  {top:4px;}
+        100% {top:-40px;}
+      }
+      /*smaller*/
+      @media (max-width: 640px) {
+        #fiveserver-info-wrapper {
+          max-width: 98%;
+        }
+        #fiveserver-info {
+          border-radius: 0px;
+        }      
+      }
+
+      </style></head>
+<body>
+    <div class="container">
+        <a href="web.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+        </a>
+        
+        <div class="payment-card">
+            <h1 class="payment-title">Nạp Tiền Vào Tài Khoản</h1>
+            
+            <div class="payment-method">
+                <div class="method-card" onclick="selectMethod(this)">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Momo</h3>
+                </div>
+                <div class="method-card" onclick="selectMethod(this)">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Thẻ ngân hàng</h3>
+                </div>
+                <div class="method-card" onclick="selectMethod(this)">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Ví điện tử</h3>
+                </div>
+            </div>
+
+            <input type="number" class="amount-input" placeholder="Nhập số tiền cần nạp (VNĐ)" min="1000">
+            
+            <button class="submit-button">Nạp Tiền Ngay</button>
+
+            <div class="payment-info">
+                <h3>Thông tin thanh toán</h3>
+                <p><i class="fas fa-info-circle"></i> Số tiền nạp tối thiểu: 1,000 VNĐ</p>
+                <p><i class="fas fa-shield-alt"></i> Bảo mật thông tin thanh toán</p>
+                <p><i class="fas fa-clock"></i> Sau khi chuyển khoản xong liên hệ zalo để lấy acc nhé <a href="https://zalo.me/0335658771">zalo</a> </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="qrModal" class="qr-modal" style="display: none;">
+        <div class="qr-content">
+            <span class="close-qr" onclick="closeQRModal()">×</span>
+            <h2>Quét mã QR để thanh toán</h2>
+            <img src="./qr.jpg" alt="QR Code" class="qr-image">
+            <div class="bank-info">
+                <h3>Thông tin chuyển khoản:</h3>
+                <div class="account-info">
+                    <p><strong>Ngân hàng:</strong> MSB</p>
+                </div>
+                <div class="account-info">
+                    <p><strong>Số tài khoản:</strong> 03886016033941</p>
+                    <button class="copy-button" onclick="copyText('03886016033941')">Copy</button>
+                </div>
+                <div class="account-info">
+                    <p><strong>Chủ tài khoản:</strong> Nguyen Kim Thuan</p>
+                    <button class="copy-button" onclick="copyText('Nguyen Kim Thuan')">Copy</button>
+                </div>
+                <div class="account-info">
+                    <p><strong>Số tiền:</strong> <span id="transferAmount">666.666</span> VNĐ</p>
+                    <button class="copy-button" onclick="copyAmount()">Copy</button>
+                </div>
+                <div class="account-info">
+                    <p><strong>Nội dung CK:</strong> <span id="transferContent">NAPTIEN</span></p>
+                    <button class="copy-button" onclick="copyText('NAPTIEN')">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Giữ nguyên function selectMethod
+
+        function showQRModal(amount) {
+            document.getElementById('qrModal').style.display = 'block';
+            document.getElementById('transferAmount').textContent = amount.toLocaleString('vi-VN');
+        }
+
+        function closeQRModal() {
+            document.getElementById('qrModal').style.display = 'none';
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Đã sao chép!');
+            });
+        }
+
+        function copyAmount() {
+            const amount = document.getElementById('transferAmount').textContent.replace(/,/g, '');
+            copyText(amount);
+        }
+
+        // Cập nhật sự kiện click cho nút submit
+        document.querySelector('.submit-button').addEventListener('click', function() {
+            const amount = document.querySelector('.amount-input').value;
+            if (amount < 1000) {
+                alert('Số tiền nạp tối thiểu là 1,000 VNĐ');
+                return;
+            }
+            showQRModal(parseInt(amount));
+        });
+
+        // Đóng modal khi click bên ngoài
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('qrModal')) {
+                closeQRModal();
+            }
+        }
+    </script>
+
+</body></html>

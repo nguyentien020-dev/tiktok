@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Acc TikTok Uy Tín</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #ffffff;
+            padding: 1.2rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            background: linear-gradient(45deg, #fe2c55, #69c9d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fe2c55, #69c9d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fe2c55;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #fe2c55, #69c9d0);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .login-btn, .register-btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            color: #333;
+            background: transparent;
+            border: 2px solid #fe2c55;
+        }
+
+        .login-btn:hover {
+            background: #fe2c55;
+            color: white;
+        }
+
+        .register-btn {
+            background: linear-gradient(45deg, #fe2c55, #69c9d0);
+            color: white;
+            border: none;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.3);
+        }
+
+        /* Mobile menu icon */
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .auth-buttons {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: #fe2c55;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Products Section */
+        .products {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #fe2c55;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #fe2c55;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #e62548;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 3rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        .special-link {
+    background: linear-gradient(45deg, #fe2c55, #69c9d0);
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.special-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 44, 85, 0.3);
+}
+
+/* Product Card cải tiến */
+.product-card {
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #fe2c55, #69c9d0);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.view-details-button {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-details-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 70%;
+    max-width: 600px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {transform: translateY(-100px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #fe2c55;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    z-index: 1001;
+    transition: left 0.3s ease;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+}
+
+.close-menu:hover {
+    color: #fe2c55;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mobile-nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    background: #f8f9fa;
+    color: #fe2c55;
+}
+
+.special-mobile-link {
+    background: linear-gradient(45deg, #fe2c55, #69c9d0);
+    color: white !important;
+    text-align: center;
+}
+
+.special-mobile-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 44, 85, 0.3);
+    background: linear-gradient(45deg, #fe2c55, #69c9d0) !important;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Overlay khi menu mobile mở */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+@media (max-width: 968px) {
+    .mobile-menu {
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok Shop</span>
+                </a>
+            </div>
+            
+<div class="nav-links">
+    <a href="#home">Trang chủ</a>
+    <a href="#products">Sản phẩm</a>
+    <a href="naptien.html" class="special-link">Nạp Tiền</a>
+    <a href="#about">Về chúng tôi</a>
+    <a href="#contact">Liên hệ</a>
+</div>            <div class="close-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-helicopter"></i>
+            </div>
+        <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok Shop</span>
+            </div>
+
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#home">Trang chủ</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="naptien.html" class="special-mobile-link">Nạp Tiền</a>
+            <a href="#about">Về chúng tôi</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
+    </div>
+</div>
+            
+
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+        </nav>
+
+
+<script>
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    
+    if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Cho phép scroll
+    } else {
+        mobileNav.classList.add('active');
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Ngăn scroll khi menu mở
+    }
+}
+
+// Cập nhật sự kiện click cho mobile menu icon
+document.querySelector('.mobile-menu').addEventListener('click', toggleMobileMenu);
+
+// Đóng menu khi click vào links
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMobileMenu();
+    });
+});
+</script>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Mua Bán Account TikTok Uy Tín</h1>
+            <p>Chất lượng - An toàn - Bảo hành trọn đời</p>
+            <a href="#products" class="cta-button">Xem Các Tài Khoản</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+<section class="products" id="products">
+    <h2 class="section-title">Tài Khoản Nổi Bật</h2>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-badge">Hot</div>
+            <img src="https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" alt="TikTok Account" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">TikTok 100 Followers</h3>
+                <div class="product-stats">
+                    <span><i class="fas fa-check-circle"></i> Bảo hành trọn đời</span>
+                </div>
+                <p class="product-price">1,000đ</p>
+                <div class="button-group">
+                    <a href="#" class="view-details-button" onclick="showDetails('100-fl')">Xem Chi Tiết</a>
+                    <a href="https://zalo.me/0335658771" class="buy-button">Mua Ngay</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-badge">Bán Chạy</div>
+            <img src="https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" alt="TikTok Account" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">TikTok 500 Followers</h3>
+                <div class="product-stats">
+                    <span><i class="fas fa-check-circle"></i> Bảo hành trọn đời</span>
+                </div>
+                <p class="product-price">5,000đ</p>
+                <div class="button-group">
+                    <a href="#" class="view-details-button" onclick="showDetails('500-fl')">Xem Chi Tiết</a>
+                    <a href="https://zalo.me/0335658771" class="buy-button">Mua Ngay</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-badge">Premium</div>
+            <img src="https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" alt="TikTok Account" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">TikTok 1000 Followers</h3>
+                <div class="product-stats">
+                    <span><i class="fas fa-check-circle"></i> Bảo hành trọn đời</span>
+                </div>
+                <p class="product-price">10,000đ</p>
+                <div class="button-group">
+                    <a href="#" class="view-details-button" onclick="showDetails('1000-fl')">Xem Chi Tiết</a>
+                    <a href="https://zalo.me/0335658771" class="buy-button">Mua Ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="detailsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Chi Tiết Tài Khoản</h2>
+        <div id="modalContent"></div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Chúng Tôi</h3>
+                <p>Shop bán acc TikTok uy tín hàng đầu Việt Nam. Cam kết chất lượng và bảo hành trọn đời.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                <p><i class="fas fa-envelope"></i> yeuem@gmail.com </p>
+                <p><i class="fas fa-map-marker-alt"></i> vietnam</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo Dõi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+const modal = document.getElementById("detailsModal");
+const span = document.getElementsByClassName("close")[0];
+const modalContent = document.getElementById("modalContent");
+
+function showDetails(product) {
+    let content = "";
+    switch(product) {
+        case '100-fl':
+            content = `
+                <h3>Tài khoản TikTok 100 Followers</h3>
+                <ul style="list-style: none; padding: 20px;">
+                    <li>✅ 100 Followers thật</li>
+                    <li>✅ Tương tác cao</li>
+                    <li>✅ Bảo hành trọn đời</li>
+                    <li>✅ Giao tài khoản ngay</li>
+                    <li>✅ Hỗ trợ 24/7</li>
+                    <li>✅ Tặng thêm 10 followers</li>
+                </ul>
+                <p style="color: #fe2c55; font-weight: bold;">Giá: 1,000đ</p>
+            `;
+            break;
+        case '500-fl':
+            content = `
+                <h3>Tài khoản TikTok 500 Followers</h3>
+                <ul style="list-style: none; padding: 20px;">
+                    <li>✅ 500 Followers thật</li>
+                    <li>✅ Tương tác cực cao</li>
+                    <li>✅ Bảo hành trọn đời</li>
+                    <li>✅ Giao tài khoản ngay</li>
+                    <li>✅ Hỗ trợ 24/7</li>
+                    <li>✅ Tặng thêm 50 followers</li>
+                </ul>
+                <p style="color: #fe2c55; font-weight: bold;">Giá: 5,000đ</p>
+            `;
+            break;
+        case '1000-fl':
+            content = `
+                <h3>Tài khoản TikTok 1000 Followers</h3>
+                <ul style="list-style: none; padding: 20px;">
+                    <li>✅ 1000 Followers thật</li>
+                    <li>✅ Tương tác cực cao</li>
+                    <li>✅ Bảo hành trọn đời</li>
+                    <li>✅ Giao tài khoản ngay</li>
+                    <li>✅ Hỗ trợ 24/7</li>
+                    <li>✅ Tặng thêm 100 followers</li>
+                </ul>
+                <p style="color: #fe2c55; font-weight: bold;">Giá: 10,000đ</p>
+            `;
+            break;
+    }
+    modalContent.innerHTML = content;
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</html>
